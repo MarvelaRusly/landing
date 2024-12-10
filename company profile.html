@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison de Gâteaux</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      margin: 0;
+    }
+    header {
+      background-color: #000000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    header nav a {
+      text-decoration: none;
+      color: #ffffff;
+      margin: 0 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      text-align: center;
+      background-color: #000000;
+      color: #ffffff;
+      padding: 6rem 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero button {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: bold; /* Make the button text bold */
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .hero button:hover {
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      max-width: 1200px;
+      padding: 2rem 0;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-around;
+    }
+    .product-card {
+      background: #ffffff;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      text-align: center;
+      padding: 1.5rem;
+      flex: 1 1 calc(30% - 1rem);
+      max-width: calc(30% - 1rem);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .product-card p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .product-card button {
+      background: #000000;
+      color: #ffffff;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .product-card button:hover {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;
+    }
+    .newsletter {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 10px;
+      margin-top: 3rem;
+    }
+    .newsletter input {
+      padding: 0.8rem;
+      width: 60%;
+      max-width: 500px;
+      margin: 1rem 0;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+    }
+    .newsletter button {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 0.7rem 2rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .newsletter button:hover {
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+    }
+    footer {
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    footer .contact-info {
+      margin-top: 1rem;
+    }
+    footer .contact-info a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer .contact-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Maison de Gâteaux 🍰</div>
+  <nav>
+    <a href="#">🏠 Accueil</a>
+    <a href="#">🛒 Boutique</a>
+    <a href="#">📖 À Propos</a>
+    <a href="#">📞 Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Un Luxe Minimaliste ✨</h1>
+  <p>Découvrez nos créations élégantes et raffinées. 🌟</p>
+  <button onclick="scrollToProducts()">Explorer</button>
+</div>
+
+<div class="container">
+  <h2 style="text-align:center; margin-bottom: 2rem;">Nos Créations 🍮</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="strawberry cake.png" alt="Gateau Fraise">
+      <h3>🍓 Gâteau Fraise</h3>
+      <p>25€</p>
+      <button onclick="addToCart('Gâteau Fraise', 25)">Ajouter au Panier 🛒</button>
+    </div>
+    <div class="product-card">
+      <img src="tarte chocolate.jpg" alt="Tarte Chocolat">
+      <h3>🍫 Tarte Chocolat</h3>
+      <p>30€</p>
+      <button onclick="addToCart('Tarte Chocolat', 30)">Ajouter au Panier 🛒</button>
+    </div>
+    <div class="product-card">
+      <img src="Éclair Vanille.png" alt="Éclair Vanille">
+      <h3>🌼 Éclair Vanille</h3>
+      <p>18€</p>
+      <button onclick="addToCart('Éclair Vanille', 18)">Ajouter au Panier 🛒</button>
+    </div>
+  </div>
+</div>
+
+<div class="container newsletter">
+  <h2>Rejoignez Notre Newsletter 💌</h2>
+  <p>Recevez nos nouveautés en exclusivité. 📰</p>
+  <input type="email" placeholder="Entrez votre e-mail">
+  <button onclick="subscribe()">S'inscrire ✍️</button>
+</div>
+
+<footer>
+  <p>© 2024 Maison de Gâteaux. Tous droits réservés. 🖤</p>
+  <div class="contact-info">
+    <p>Contactez-nous:</p>
+    <p>Téléphone: +33 1 23 45 67 89</p>
+    <p>Suivez-nous sur:</p>
+    <a href="https://www.instagram.com/maison_de_gateaux" target="_blank">Instagram</a> | 
+    <a href="https://www.tiktok.com/@maison_de_gateaux" target="_blank">TikTok</a>
+  </div>
+</footer>
+
+<script>
+  function scrollToProducts() {
+    window.scrollTo({
+      top: document.querySelector('.product-grid').offsetTop - 50,
+      behavior: 'smooth'
+    });
+  }
+
+  function addToCart(item, price) {
+    const productCount = document.createElement('div');
+    productCount.textContent = `${item} ajouté au panier pour ${price}€.`;
+    document.body.appendChild(productCount);
+  }
+
+  function subscribe() {
+    alert("Merci de vous être inscrit !");
+  }
+</script>
+
+</body>
+</html>
